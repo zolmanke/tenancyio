@@ -4,7 +4,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-export const getHousesByProperty = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const getHousesByProperty = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: getHousesByProperty.url(args, options),
     method: 'get',
 })
@@ -19,7 +19,7 @@ getHousesByProperty.definition = {
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-getHousesByProperty.url = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+getHousesByProperty.url = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { property: args }
     }
@@ -52,7 +52,7 @@ getHousesByProperty.url = (args: { property: number | { id: number } } | [proper
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-getHousesByProperty.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+getHousesByProperty.get = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: getHousesByProperty.url(args, options),
     method: 'get',
 })
@@ -61,7 +61,7 @@ getHousesByProperty.get = (args: { property: number | { id: number } } | [proper
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-getHousesByProperty.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+getHousesByProperty.head = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: getHousesByProperty.url(args, options),
     method: 'head',
 })
@@ -71,7 +71,7 @@ getHousesByProperty.head = (args: { property: number | { id: number } } | [prope
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-    const getHousesByPropertyForm = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const getHousesByPropertyForm = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: getHousesByProperty.url(args, options),
         method: 'get',
     })
@@ -81,7 +81,7 @@ getHousesByProperty.head = (args: { property: number | { id: number } } | [prope
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-        getHousesByPropertyForm.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        getHousesByPropertyForm.get = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: getHousesByProperty.url(args, options),
             method: 'get',
         })
@@ -90,7 +90,7 @@ getHousesByProperty.head = (args: { property: number | { id: number } } | [prope
  * @see app/Http/Controllers/HouseAssignmentController.php:118
  * @route '/properties/{property}/houses'
  */
-        getHousesByPropertyForm.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        getHousesByPropertyForm.head = (args: { property: string | number | { id: string | number } } | [property: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: getHousesByProperty.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
@@ -106,7 +106,7 @@ getHousesByProperty.head = (args: { property: number | { id: number } } | [prope
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-export const history = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+export const history = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: history.url(args, options),
     method: 'get',
 })
@@ -121,7 +121,7 @@ history.definition = {
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-history.url = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+history.url = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
         args = { house: args }
     }
@@ -154,7 +154,7 @@ history.url = (args: { house: number | { id: number } } | [house: number | { id:
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-history.get = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+history.get = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: history.url(args, options),
     method: 'get',
 })
@@ -163,7 +163,7 @@ history.get = (args: { house: number | { id: number } } | [house: number | { id:
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-history.head = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+history.head = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: history.url(args, options),
     method: 'head',
 })
@@ -173,7 +173,7 @@ history.head = (args: { house: number | { id: number } } | [house: number | { id
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-    const historyForm = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    const historyForm = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: history.url(args, options),
         method: 'get',
     })
@@ -183,7 +183,7 @@ history.head = (args: { house: number | { id: number } } | [house: number | { id
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-        historyForm.get = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        historyForm.get = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: history.url(args, options),
             method: 'get',
         })
@@ -192,7 +192,7 @@ history.head = (args: { house: number | { id: number } } | [house: number | { id
  * @see app/Http/Controllers/HouseAssignmentController.php:189
  * @route '/houses/{house}/assignment-history'
  */
-        historyForm.head = (args: { house: number | { id: number } } | [house: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        historyForm.head = (args: { house: string | number | { id: string | number } } | [house: string | number | { id: string | number } ] | string | number | { id: string | number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: history.url(args, {
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',

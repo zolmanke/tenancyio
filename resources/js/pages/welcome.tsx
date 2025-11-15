@@ -127,7 +127,7 @@ export default function Welcome({
             Manage tenants, payments, maintenance, and more from anywhere.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
+        {/* <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
             {!auth.user && canRegister && (
                 <Link
                     href={register()}
@@ -139,7 +139,7 @@ export default function Welcome({
             <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:border-[#590202] transition-colors w-full sm:w-auto">
                 Watch Demo
             </button>
-        </div>
+        </div> */}
 
 {/* Feature Notes - Very Small with Text */}
 <div className="max-w-7xl mx-auto px-4">
@@ -205,55 +205,67 @@ export default function Welcome({
     </div>
 </section>
 
-                {/* App Download Section */}
-                <section className="bg-gradient-to-r from-[#590202] to-[#820303] text-white py-16">
-                    <div className="container mx-auto px-6 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Download Our Mobile App
-                        </h2>
-                        <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                            Manage your properties on the go with our feature-packed mobile application. 
-                            Available on both iOS and Android platforms.
-                        </p>
-                        
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            {/* Play Store Button */}
-                            <button className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-3 shadow-lg">
-                                <FaAndroid className="text-2xl" />
-                                <div className="text-left">
-                                    <div className="text-xs">GET IT ON</div>
-                                    <div className="text-lg font-semibold">Google Play</div>
-                                </div>
-                            </button>
 
-                            {/* App Store Button */}
-                            <button className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-3 shadow-lg">
-                                <FaApple className="text-2xl" />
-                                <div className="text-left">
-                                    <div className="text-xs">Download on the</div>
-                                    <div className="text-lg font-semibold">App Store</div>
-                                </div>
-                            </button>
-                        </div>
 
-                        <div className="mt-8 flex justify-center space-x-8 text-white">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold flex items-center justify-center">
-                                    4.8 <FaStar className="ml-1 text-yellow-400" />
-                                </div>
-                                <div className="text-sm">App Store Rating</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold">10K+</div>
-                                <div className="text-sm">Active Users</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold">99.9%</div>
-                                <div className="text-sm">Uptime</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+{/* App Download Section */}
+<section className="bg-gradient-to-r from-[#590202] to-[#820303] text-white py-16">
+    <div className="container mx-auto px-6 text-center">
+        {/* Title with Coming Soon Ribbon */}
+        <div className="relative inline-block mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold">
+                Download Our Mobile App
+            </h2>
+            {/* Coming Soon Ribbon */}
+            <div className="absolute -top-3 -right-8 bg-yellow-500 text-black px-4 py-1 text-sm font-bold rounded-full shadow-lg rotate-12">
+                COMING SOON
+            </div>
+        </div>
+        
+        <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+            Manage your properties on the go with our feature-packed mobile application. 
+            Available on both iOS and Android platforms.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* Play Store Button */}
+            <button className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-3 shadow-lg">
+                <FaAndroid className="text-2xl" />
+                <div className="text-left">
+                    <div className="text-xs">GET IT ON</div>
+                    <div className="text-lg font-semibold">Google Play</div>
+                </div>
+            </button>
+
+            {/* App Store Button */}
+            <button className="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-3 shadow-lg">
+                <FaApple className="text-2xl" />
+                <div className="text-left">
+                    <div className="text-xs">Download on the</div>
+                    <div className="text-lg font-semibold">App Store</div>
+                </div>
+            </button>
+        </div>
+
+        {/* <div className="mt-8 flex justify-center space-x-8 text-white">
+            <div className="text-center">
+                <div className="text-2xl font-bold flex items-center justify-center">
+                    4.8 <FaStar className="ml-1 text-yellow-400" />
+                </div>
+                <div className="text-sm">App Store Rating</div>
+            </div>
+            <div className="text-center">
+                <div className="text-2xl font-bold">10K+</div>
+                <div className="text-sm">Active Users</div>
+            </div>
+            <div className="text-center">
+                <div className="text-2xl font-bold">99.9%</div>
+                <div className="text-sm">Uptime</div>
+            </div>
+        </div> */}
+    </div>
+</section>
+
+
 
                 {/* Testimonials */}
                 <section className="container mx-auto px-6 py-16">
